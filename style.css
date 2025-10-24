@@ -1,8 +1,13 @@
 :root {
   --main-color: #1abc9c;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --surface: #f6f8fa;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
   --accent-color: #27ae60;
   --danger-color: #c0392b;
-  --bg-color: #f8f9fa;
+  --bg-color: #f6f8fa;
   --section-bg: #ffffff;
   --header-bg: #2c3e50;
   --nav-bg: #34495e;
@@ -11,9 +16,107 @@
 }
 
 body {
-  background: var(--bg-color);
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--surface);
+  margin: 0;
+  color: #111827;
 }
+
+/* New summary card styles */
+.summary-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+  max-width: 900px;
+}
+
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.summary-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.toggle-btn:focus {
+  outline: 3px solid rgba(37,99,235,0.18);
+}
+
+/* Compact grid */
+.summary-compact {
+  display: block;
+  padding: 0.6rem 0;
+}
+
+.summary-compact-grid {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summary-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 160px;
+  text-align: left;
+}
+
+.summary-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Details panel */
+.detail-panel {
+  margin-top: 0.8rem;
+  border-top: 1px dashed #eef2f7;
+  padding-top: 0.8rem;
+}
+
+.footfall-breakdown {
+  margin: 0;
+  padding-left: 1.05rem;
+  color: #111827;
+}
+
+.footfall-breakdown li {
+  margin: 0.35rem 0;
+}
+
+/* When there's nothing to show */
+.summary-empty {
+  color: var(--muted);
+  padding: 0.6rem 0;
+}
+
+@media (max-width: 560px) {
+  .summary-compact-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .summary-value {
+    font-size: 1.6rem;
+  }
+}
+
+/* Keep rest of existing styles - ensure we do not remove existing class definitions the app expects. */
 
 header {
   background: var(--header-bg);

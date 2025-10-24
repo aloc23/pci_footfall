@@ -33,11 +33,6 @@
           <input id="peakUtilVal" type="number" min="0" max="100" value="70" step="1" oninput="padelPeakUtil.value=this.value; calculatePadel()">
         </label>
         <label>
-          Peak Rate (€):
-          <input id="padelPeakRate" type="range" min="0" max="100" value="40" step="1" oninput="peakRateVal.value=this.value; calculatePadel()">
-          <input id="peakRateVal" type="number" min="0" max="100" value="40" step="1" oninput="padelPeakRate.value=this.value; calculatePadel()">
-        </label>
-        <label>
           Off Hours/Day:
           <input id="padelOffHours" type="range" min="0" max="12" value="2" step="0.5" oninput="offHoursVal.value=this.value; calculatePadel()">
           <input id="offHoursVal" type="number" min="0" max="12" value="2" step="0.5" oninput="padelOffHours.value=this.value; calculatePadel()">
@@ -47,18 +42,24 @@
           <input id="padelOffUtil" type="range" min="0" max="100" value="35" step="1" oninput="offUtilVal.value=this.value; calculatePadel()">
           <input id="offUtilVal" type="number" min="0" max="100" value="35" step="1" oninput="padelOffUtil.value=this.value; calculatePadel()">
         </label>
-        <label>
-          Off Rate (€):
-          <input id="padelOffRate" type="range" min="0" max="100" value="25" step="1" oninput="offRateVal.value=this.value; calculatePadel()">
-          <input id="offRateVal" type="number" min="0" max="100" value="25" step="1" oninput="padelOffRate.value=this.value; calculatePadel()">
-        </label>
         <label>Days/Week: <input id="padelDays" type="number" value="7" oninput="calculatePadel()"></label>
         <label>Weeks/Year: <input id="padelWeeks" type="number" value="52" oninput="calculatePadel()"></label>
         <label>Booking length (minutes): <input id="padelBookingLength" type="number" value="60" oninput="calculatePadel()"></label>
         <label>Average players per booking: <input id="padelAvgPlayers" type="number" value="4" oninput="calculatePadel()"></label>
       </div>
+      
+      <!-- Footfall Summary Card -->
+      <div id="padelFootfall" class="summary-card" aria-live="polite">
+        <div class="summary-card-header">
+          <h3>Footfall Summary</h3>
+          <button id="footfallToggle" class="toggle-btn" aria-expanded="false">Show details</button>
+        </div>
+        <div id="padelFootfallCompact" class="summary-compact"></div>
+        <div id="padelFootfallDetails" class="detail-panel" hidden></div>
+      </div>
+      
+      <!-- Utilization Breakdown -->
       <div id="padelSummary" class="summary" aria-live="polite"></div>
-      <div id="padelFootfall" class="summary" aria-live="polite"></div>
     </section>
   </main>
 </body>
