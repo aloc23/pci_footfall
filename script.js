@@ -24,7 +24,7 @@ function renderFootfallSummary({ footfallPerYear, footfallPerMonth, footfallPerW
   // Compact view: large yearly number + per day
   compactEl.innerHTML = `
     <div class="summary-compact-grid">
-      <div class="summary-value" aria-hidden="true">${Math.round(footfallPerYear).toLocaleString()}</div>
+      <div class="summary-value">${Math.round(footfallPerYear).toLocaleString()}</div>
       <div class="summary-meta">
         <div class="meta-row"><span class="meta-label">per year</span></div>
         <div class="meta-row small"><strong>${footfallPerDay.toFixed(1)}</strong> per day avg</div>
@@ -34,7 +34,7 @@ function renderFootfallSummary({ footfallPerYear, footfallPerMonth, footfallPerW
 
   // Details view: week/month/day breakdown
   detailsEl.innerHTML = `
-    <ul class="footfall-breakdown" role="list">
+    <ul class="footfall-breakdown" role="list" tabindex="-1">
       <li><b>People per day:</b> ${footfallPerDay.toFixed(1)}</li>
       <li><b>People per week:</b> ${Math.round(footfallPerWeek)}</li>
       <li><b>People per month:</b> ${Math.round(footfallPerMonth)}</li>
@@ -53,7 +53,8 @@ function renderFootfallSummary({ footfallPerYear, footfallPerMonth, footfallPerW
     } else {
       detailsEl.hidden = false;
       // move focus into details for keyboard users
-      detailsEl.querySelector('ul')?.focus?.();
+      const ul = detailsEl.querySelector('ul');
+      if (ul) ul.focus();
     }
   };
 }

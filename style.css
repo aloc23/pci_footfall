@@ -1,9 +1,9 @@
-:root{
-  --main-color:#1abc9c;
-  --card-bg:#ffffff;
-  --muted:#6b7280;
-  --accent:#2563eb;
-  --surface:#f6f8fa;
+:root {
+  --main-color: #1abc9c;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --surface: #f6f8fa;
   --shadow: 0 6px 18px rgba(15,23,42,0.06);
   --accent-color: #27ae60;
   --danger-color: #c0392b;
