@@ -54,8 +54,11 @@
         </label>
         <label>Days/Week: <input id="padelDays" type="number" value="7" oninput="calculatePadel()"></label>
         <label>Weeks/Year: <input id="padelWeeks" type="number" value="52" oninput="calculatePadel()"></label>
+        <label>Booking length (minutes): <input id="padelBookingLength" type="number" value="60" oninput="calculatePadel()"></label>
+        <label>Average players per booking: <input id="padelAvgPlayers" type="number" value="4" oninput="calculatePadel()"></label>
       </div>
       <div id="padelSummary" class="summary" aria-live="polite"></div>
+      <div id="padelFootfall" class="summary" aria-live="polite"></div>
     </section>
   </main>
 </body>
